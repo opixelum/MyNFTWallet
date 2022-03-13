@@ -2,7 +2,7 @@ import React from "react"
 
 export default function Card(props) {
   let badgeText
-  switch (props.nft.status) {
+  switch (props.status) {
     case "sell":
       badgeText = "BUY NOW"
       break
@@ -22,17 +22,17 @@ export default function Card(props) {
           <button 
             className="button position-absolute bg-light text-dark m-1 rounded border-0"
           >{badgeText}</button>}
-          <img className="rounded-top" src={props.nft.img} alt={props.nft.num}></img>
+          <img className="rounded-top" src={props.img} alt={props.num}></img>
 
           <div className="container">
             <div className="row">
               <div className="col-6">
-                <span>{props.nft.collection}</span>
-                <span>#{props.nft.id}</span>
+                <span>{props.collection}</span>
+                <span>#{props.id}</span>
               </div>
               <div className="col-6 d-flex justify-content-end">
                 <span>Price:</span>
-                <span>{props.nft.price} ETH</span>
+                <span>{props.price} ETH</span>
               </div>
             </div>
           </div>
