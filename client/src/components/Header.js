@@ -3,11 +3,7 @@ import { useState } from "react"
 export default function Header() {
     const [isConnected, setIsConnected] = useState(false)
     const toggleWallet = () => {
-        if (isConnected) {
-            setIsConnected(false)
-        } else {
-            setIsConnected(true)
-        }
+        setIsConnected(oldStatus => !oldStatus)
     }
 
     return (
