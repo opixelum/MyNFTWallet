@@ -1,4 +1,5 @@
 import React from "react"
+import Header from "./components/Header"
 import Card from "./components/Card"
 import nftsData from "./nftsData"
 
@@ -7,7 +8,7 @@ export default function App() {
 
   return (
     <>
-      <h1 className="text-center">Opixelum's NFT wallet</h1>
+      <Header/>
 
       <div className="container d-flex flex-wrap">
         {nftsCards}
