@@ -3,18 +3,7 @@ import Card from "./components/Card"
 import nftsData from "./nftsData"
 
 export default function App() {
-  const nftsCards = nftsData.map(nft => {
-    return (
-      <Card
-        key={nft.tokenID}
-        img={nft.img}
-        tokenID={nft.tokenID}
-        collection={nft.collection}
-        price={nft.price}
-        status={nft.status}
-      />
-    )
-  })
+  const nftsCards = nftsData.map(nft => <Card key={nft.id} nft={nft}/>)
 
   return (
     <>
