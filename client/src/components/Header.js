@@ -1,23 +1,15 @@
 import { useState } from "react"
 
-export default function Header() {
-    const [theme, setTheme] = useState("dark")
-    const toggleTheme = () => {
-      setTheme(prevTheme => prevTheme === "dark" ? "light" : "dark")
-    }
-
-    const [isConnected, setIsConnected] = useState(false)
-    const toggleWallet = () => setIsConnected(oldStatus => !oldStatus)
-
+export default function Header(props) {
     return (
-        <nav className={`navbar navbar-expand-lg navbar-${theme} bg-${theme}`}>
+        <nav className={`navbar navbar-expand-lg navbar-${props.theme} bg-${props.theme}`}>
           <div className="container-fluid">
 
             <div id="theme-form" className="d-flex align-items-center">
               <svg 
                 xmlns="http://www.w3.org/2000/svg"
                 width="16" height="16"
-                fill={theme === "dark" ? "white" : "black"} 
+                fill={props.theme === "dark" ? "white" : "black"} 
                 className="bi bi-moon-fill"
                 viewBox="0 0 16 16"
               >
@@ -28,13 +20,13 @@ export default function Header() {
                   className="form-check-input"
                   type="checkbox"
                   role="switch"
-                  onChange={toggleTheme}
+                  onChange={props.toggleTheme}
                 />
               </div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="22" height="22"
-                fill={theme === "dark" ? "white" : "black"} 
+                fill={props.theme === "dark" ? "white" : "black"} 
                 className="bi bi-sun-fill"
                 viewBox="0 0 16 16"
               >
@@ -45,8 +37,8 @@ export default function Header() {
             <a className="navbar-brand" href="#">MyNFTWallet</a>
             <button
               className="btn btn-outline-danger"
-              onClick={toggleWallet}
-            >{isConnected ? "Disconnect wallet" : "Connect wallet"}</button>
+              onClick={props.toggleWallet}
+            >{props.isConnected ? "Disconnect wallet" : "Connect wallet"}</button>
           </div>
         </nav>
     )
