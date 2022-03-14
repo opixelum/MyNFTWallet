@@ -17,12 +17,12 @@ export default function Card(props) {
   }
 
     return (
-        <div className="container p-0 w-50 d-flex flex-column border rounded">
+        <div className="d-inline-block p-0 w-25 border rounded">
           {badgeText != null &&
           <button 
             className="button position-absolute bg-light text-dark m-1 rounded border-0"
           >{badgeText}</button>}
-          <img className="rounded-top" src={props.img} alt={props.num}></img>
+          <img className="img-fluid rounded-top" src={props.img} alt={props.num}></img>
 
           <div className="container">
             <div className="row">
