@@ -13,7 +13,7 @@ export default function Header() {
         <nav className={`navbar navbar-expand-lg navbar-${theme} bg-${theme}`}>
           <div className="container-fluid">
 
-            <div id="darl-light-theme-switch" className="d-flex align-items-center">
+            <div id="theme-form" className="d-flex align-items-center">
               <svg 
                 xmlns="http://www.w3.org/2000/svg"
                 width="16" height="16"
@@ -28,7 +28,6 @@ export default function Header() {
                   className="form-check-input"
                   type="checkbox"
                   role="switch"
-                  id="flexSwitchCheckDefault"
                   onChange={toggleTheme}
                 />
               </div>
